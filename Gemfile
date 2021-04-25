@@ -7,6 +7,7 @@ ruby '3.0.0'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'hirb', '~> 0.7.3'
