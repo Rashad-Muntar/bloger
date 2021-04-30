@@ -11,6 +11,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'hirb', '~> 0.7.3'
+gem 'will_paginate', '~> 3.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

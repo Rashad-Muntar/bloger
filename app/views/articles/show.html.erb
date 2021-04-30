@@ -9,6 +9,8 @@
   <strong>Body:</strong>
   <%= @article.body %>
 </p>
-
+<% if loggedin? && current_user == @article.user %>
 <%= link_to 'Edit', edit_article_path(@article) %> |
+<% end%>
+
 <%= link_to 'Back', articles_path %>

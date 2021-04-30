@@ -1,9 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :require_before, except: %i[show index]
+  before_action :require_same_user, only: %i[update edit destroy]
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 1)
   end
 
   # GET /articles/1 or /articles/1.json
@@ -22,7 +24,7 @@ class ArticlesController < ApplicationController
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: "Article was successfully created." }

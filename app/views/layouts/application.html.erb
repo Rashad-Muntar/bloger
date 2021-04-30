@@ -11,6 +11,14 @@
   </head>
 
   <body>
+  <% if loggedin? %>
+  <h2><%= link_to 'Log out', signout_path, method: :delete %></h2>
+<% else %>
+  <h2><%= link_to 'Log in', login_path %></h2> 
+  <h2><%= link_to 'Sign up', signup_path %></h2>
+<% end%>
+  
+ 
     <%= yield %>
   </body>
 </html>
